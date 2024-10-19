@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Sign In</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('images/signin.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            margin: 0;
+            color: aliceblue;
+        }
+        .form-container {
+            background: rgba(0,0,0,);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0);
+        }
+        .logo {
+            background-image: url('ipl.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 100px;
+            width: 200px;
+            margin: 0 auto 20px;
+        }
+        .details {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo"></div>
+            <form>
+                <h1 class="text-center">Sign In</h1>
+                <hr>
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label">Enter name:</label>
+                    <input type="text" class="form-control" id="nameInput" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                    <label for="dobInput" class="form-label">Enter date of birth:</label>
+                    <input type="date" class="form-control" id="dobInput" placeholder="Date of Birth">
+                </div>
+                <div class="mb-3">
+                    <label for="genderInput" class="form-label" style="text-decoration: aliceblue;">Enter gender:</label><br>
+                    <input type="radio" name="gender" value="male" > Male
+                    <input type="radio" name="gender" value="female"> female
+                </div>
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label">Enter email:</label>
+                    <input type="email" class="form-control" id="emailInput" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <label for="phoneInput" class="form-label">Enter phone number:</label>
+                    <input type="tel" class="form-control" id="phoneInput" placeholder="Phone Number">
+                </div>
+                <div class="mb-3">
+                    <label for="passwordInput" class="form-label">Enter password:</label>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                </div>
+                <hr>
+                <div class="text-center">
+                    <button id="submitButton" type="button" class="btn btn-primary" disabled>Submit</button>
+                </div>
+            </form>
+            <div class="details">
+                <details>
+                    <summary>Detail of students</summary>
+                    <p>Topic: Replica of IPL website</p>
+                    <p>1) Name: CHANDARIYA DHRUVIL A<br>Enr. no.: 236250307015</p>
+                    <p>2) Name: KANZARIYA RAJ N<br>Enr. no.: 236250307054</p>
+                </details>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const nameInput = document.getElementById('nameInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const submitButton = document.getElementById('submitButton');
+
+        // Enable submit button only if both name and password are entered
+        nameInput.addEventListener('input', toggleSubmitButton);
+        passwordInput.addEventListener('input', toggleSubmitButton);
+
+        function toggleSubmitButton() {
+            if (nameInput.value && passwordInput.value) {
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.setAttribute('disabled', 'true');
+            }
+        }
+    </script>
+</body>
+</html>

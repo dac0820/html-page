@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://www.zingoy.com/blog/wp-content/uploads/2020/03/imgonline-com-ua-resize-qw5HtwPhEWJ-1024x530.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .header {
+            text-align: center;
+            background-color: rgba(0, 31, 63, 0.8);
+            color: #fff;
+            padding: 20px 0;
+        }
+        .main-content {
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .child-page {
+            width: 400px;
+            height: 250px;
+            padding: 10px;
+            margin: 20px;
+            border: 5px solid #e4d8d8;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.626);
+        }
+        .child-page:hover {
+            transform: translateY(-5px);
+        }
+        .animated {
+            animation: fadeIn 1s;
+        }
+        .image {
+            width: 370px;
+            height: 220px;
+        }
+        h1 {
+            margin: 0;
+        }
+        
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .child-page {
+                width: 90%; /* Make child pages take more width on smaller screens */
+                height: auto; /* Adjust height to auto for flexibility */
+            }
+            .image {
+                width: 100%; /* Make images responsive */
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">IPL Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="matchschedule.html">Match Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="team.html">Teams</a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-light" onclick="window.location.href='signin.html'">Login</button>
+        </div>
+    </div>
+</nav>
+
+<div class="header">
+    <h1>Welcome to IPL</h1>
+</div>
+
+<div class="main-content animated">
+    <div class="child-page">
+        <a href="matchschedule.html">
+            <img class="image" src="images/teamsai.jpeg" alt="Match Schedule">
+        </a><br><br>
+        <p style="color: antiquewhite;">Match Schedule</p>
+    </div>
+    <div class="child-page">
+        <a href="team.html">
+            <img class="image" src="images/teamsai.jpeg" alt="Teams">
+        </a><br><br>
+        <p style="color: antiquewhite;">Teams</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
